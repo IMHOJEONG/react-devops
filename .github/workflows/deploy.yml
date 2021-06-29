@@ -40,15 +40,9 @@ jobs:
         run: yarn build
         env:
           NODE_ENV: production
-        
-      - name: Setting Github
-        run: | 
-          git config --global user.name "IMHOJEONG"
-          git config --global user.email "39ghwjd@naver.com"
 
       - name: Deploy to gh-pages
-        run: yarn deploy
-        # uses: peaceiris/actions-gh-pages@v3
-        # with:
-        #   github_token: ${{ secrets.GITHUB_TOKEN }}
-        #   publish_dir: ./dist
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
