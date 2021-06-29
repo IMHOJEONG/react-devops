@@ -41,6 +41,11 @@ jobs:
         env:
           NODE_ENV: production
         
+      - name: Setting Github
+        run: | 
+          git config user.email "39ghwjd@naver.com"
+          git config user.name "IMHOJEONG"
+          
       - name: Deploy to gh-pages
         run: yarn deploy
         # uses: peaceiris/actions-gh-pages@v3
